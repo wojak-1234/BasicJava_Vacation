@@ -63,8 +63,5 @@ public class BankAccessModifierMain {
         account01.withdraw(20000, 1234);
         // 성공 했을 때
         account01.withdraw(500, 1234);
-
-
-
     }
 }
