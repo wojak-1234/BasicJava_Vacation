@@ -31,9 +31,10 @@ public class ArrayTest05 {
     public static void main(String[] args) {
         Double a = Math.random();       // 0.0 초과 1.0 미만의 난수를 생성해서 반환
         System.out.println(a);
-        Integer [] numbers = new Integer [10];
-        for (int i : numbers) {
-            numbers[i] = (int)Math.random();
+        int add=0;
+        int [] numbers = new int [10];
+        for (int i=0;i<numbers.length;i++) {
+            numbers[i] = (int)((Math.random()*10)+1);
         }
             System.out.println(numbers.toString());
         for (int i : numbers) {
@@ -43,14 +44,15 @@ public class ArrayTest05 {
         if(i%2==0)
         {
             System.out.println(i);
-            int add=0;
             add+=i;
         }
-            System.out.println(i);
+            System.out.println(add);
         Arrays.sort(numbers);
             System.out.println(Arrays.toString(numbers));
-            Arrays.sort(numbers, Comparator.reverseOrder());
-            System.out.println(Arrays.toString(numbers));
+            for(int j=numbers.length-1;j>=0;j--)
+            {
+                System.out.print(numbers[j]);
+            }
         }
     }
 }
