@@ -2,20 +2,11 @@ package chapter11_arrays;
 
 import java.util.Arrays;
 import java.util.Random;
+
 /*
-    로또 번호 추첨기를 프로그래밍할 예정
-
-    1. 1부터 45까지의 숫자를 임의로 생성한 후, lotoNumbers라는 배열에 저장할 예정
-    2. 2차 배열을 만들 예정인데, 5번의 게임 진행
-        - 6개의 번호 뽑는 것을 5게임 할 예정입니다.
-    3. nextInt()를 통해서 번호를 뽑게 되면 중복 번호가 생길 수 있습니다.
-        -> getter / setter 와 같은 파트에서 중복 제거와 관련된 로직을 확인 가능
-    4. 배열 완성 후 오름차순을 통해서 숫자정렬후 출력
-
-    실행 예
-    이번 로또 당첨 번호는 다음과 같습니다
+    강사버전 참조하고 가장 상위의 for 문을 while 형태로 변환하고 정상적으로 작동하는지 확인
  */
-public class ArrayTest08 {
+public class ArrayTest08_While {
     public static void main(String[] args) {
         Random random = new Random();
         int[][] lotoNumbers = new int[5][6];
@@ -30,9 +21,9 @@ public class ArrayTest08 {
                         if (lotoNumbers[i][k] == newNumber) {
                             isDuplicate = true;
                             break;
-                        }   //boolean 변수가 true 라면 다시 난수 대입.
+                        }
                     }
-                } while (isDuplicate);
+                } while (isDuplicate);             //totalGame --
                 lotoNumbers[i][j] = newNumber;
             }
             Arrays.sort(lotoNumbers[i]);
